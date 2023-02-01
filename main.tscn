@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://main.cs" type="Script" id=1]
+
+[sub_resource type="Theme" id=1]
+
+[node name="main screen" type="Panel"]
+margin_right = 1026.0
+margin_bottom = 600.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="titlebar" type="Line2D" parent="."]
+position = Vector2( 5, -120 )
+scale = Vector2( 1, 1.2 )
+points = PoolVector2Array( 28, 156, 573, 156, 994, 156 )
+default_color = Color( 0.580392, 0.219608, 0.219608, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="title" type="Label" parent="."]
+margin_left = 362.0
+margin_top = 9.0
+margin_right = 530.0
+margin_bottom = 41.0
+rect_scale = Vector2( 2, 1.5 )
+text = "Veronica's Epic Battle!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="outputwindow" type="TextEdit" parent="."]
+margin_left = 35.0
+margin_top = 91.0
+margin_right = 676.0
+margin_bottom = 289.0
+rect_scale = Vector2( 1.5, 1.5 )
+mouse_default_cursor_shape = 0
+theme = SubResource( 1 )
+readonly = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="inputwindow" type="LineEdit" parent="."]
+margin_left = 311.0
+margin_top = 404.0
+margin_right = 524.0
+margin_bottom = 445.0
+rect_scale = Vector2( 2, 1.5 )
+align = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button" type="Button" parent="."]
+margin_left = 444.0
+margin_top = 490.0
+margin_right = 601.0
+margin_bottom = 528.0
+mouse_default_cursor_shape = 2
+text = "Enter"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="button_down" from="button" to="." method="_on_button_button_down"]
