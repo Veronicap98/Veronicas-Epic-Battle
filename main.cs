@@ -6,6 +6,8 @@ public class main : Panel
 	public TextEdit outputwindow;
 	public LineEdit inputwindow;
 	public Button button;
+	public Label herohplabel, monsterhplabel, xplabel;
+	public ProgressBar herohp, monsterhp, xpbar;
 	public string name, say, yesorno;
 	public int x = 0, escape, score = 0, level = 1, heroStart = 20, monsterStart = 20, lvlXP = 10, monsterStr = 8;
 	
@@ -15,6 +17,16 @@ public class main : Panel
 		outputwindow = (TextEdit)GetNode("outputwindow");
 		inputwindow = (LineEdit)GetNode("inputwindow");
 		button = (Button)GetNode("button");
+		herohplabel = (Label)GetNode("herohplabel");
+		monsterhplabel = (Label)GetNode("monsterhplabel");
+		herohp = (ProgressBar)GetNode("herohp");
+		monsterhp = (ProgressBar)GetNode("monsterhp");
+		xplabel = (Label)GetNode("xplabel");
+		xpbar = (ProgressBar)GetNode("xpbar");
+		herohp.Visible = false; herohplabel.Visible = false; monsterhp.Visible = false; monsterhplabel.Visible = false; xpbar.Visible = false; xplabel.Visible = false;
+		
+		herohplabel.Text = name; monsterhplabel.Text = "Monster HP";
+
 		
 		intro();
 		
@@ -24,6 +36,8 @@ public class main : Panel
 	public override void _Process(float delta)
 	{
 		outputwindow.Text = say;
+		herohplabel.Text = $"{name} HP";
+		xplabel.Text = $"{name} Exp. Points";
 		outputwindow.ScrollVertical = outputwindow.GetLineCount() + 1;
 	}
 
@@ -80,8 +94,9 @@ public class main : Panel
 						x -= 1;
 						break;
 					case "no":
-						inputwindow.Text = "";
-						say = $"Goobye, {name}. Thanks for playing! I hope you enjoyed.\n\n-Veronicap";
+						herohp.Visible = false; herohplabel.Visible = false; monsterhp.Visible = false; monsterhplabel.Visible = false; xpbar.Visible = false; xplabel.Visible = false;
+						inputwindow.Text = ""; 
+						say = $"Goodbye, {name}. Thanks for playing! I hope you enjoyed.\n\n-Veronicap";
 						await ToSignal(GetTree().CreateTimer(5), "timeout");
 						GetTree().Quit();
 						break;
@@ -150,14 +165,19 @@ public class main : Panel
 		int hero = heroStart, monster = monsterStart, hit;
 		Random random = new Random();
 		say = ""; inputwindow.Text = ""; inputwindow.Editable = false; button.Disabled = true;
+		herohp.Visible = true; herohplabel.Visible = true; monsterhp.Visible = true; monsterhplabel.Visible = true; xpbar.Visible = true; xplabel.Visible = true;
+		herohp.Value = hero; monsterhp.Value = monster; xpbar.MaxValue = lvlXP;
+		herohp.MaxValue = heroStart; monsterhp.MaxValue = 20;
 
 		do 
 		{
 			// Hero's attack turn
 			hit = random.Next(1, 10);
 			monster -= hit;
+			monsterhp.Value = monster;
 			say += $"Monster is hit for {hit} damage. Current HP: {monster}\n";
-			score += (hit / 2);
+			if (score <= lvlXP) score += (hit / 2);			
+			xpbar.Value = score;
 			await ToSignal(GetTree().CreateTimer(1), "timeout");
 			if (monster <= 0)
 			{
@@ -169,6 +189,7 @@ public class main : Panel
 			// Monster's attack turn
 			hit = random.Next(1, monsterStr);
 			hero -= hit;
+			herohp.Value = hero;
 			say += $"{name} is hit for {hit} damage. Current HP: {hero}\n";
 			await ToSignal(GetTree().CreateTimer(1), "timeout");
 			if (hero <= 0)
@@ -188,8 +209,10 @@ public class main : Panel
 		{
 			await ToSignal(GetTree().CreateTimer(1), "timeout");
 			level += 1;
+			xpbar.MinValue = lvlXP;
 			lvlXP += ((level * 2) + 10);
 			heroStart += 2;
+			herohp.MaxValue = heroStart;
 			monsterStr += 2;
 			say += $"\nLevel up! Level: {level} +2 max HP\n";
 			await ToSignal(GetTree().CreateTimer(1), "timeout");
