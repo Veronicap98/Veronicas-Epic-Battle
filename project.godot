@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Veronica's Epic Battle C# Edition"
+config/name="Veronica's Epic Battle"
 config/description="Fight the Enemies of a lifetime in this exhilirating fight between life and death!"
 run/main_scene="res://main.tscn"
 boot_splash/show_image=false

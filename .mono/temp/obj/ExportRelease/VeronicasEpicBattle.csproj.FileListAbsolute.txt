@@ -1,0 +1,9 @@
+C:\Users\palki\OneDrive\Documents\GitHub\Veronicas-Epic-Battle\.mono\temp\bin\ExportRelease\VeronicasEpicBattle.dll
+C:\Users\palki\OneDrive\Documents\GitHub\Veronicas-Epic-Battle\.mono\temp\bin\ExportRelease\VeronicasEpicBattle.pdb
+C:\Users\palki\OneDrive\Documents\GitHub\Veronicas-Epic-Battle\.mono\temp\obj\ExportRelease\VeronicasEpicBattle.csproj.AssemblyReference.cache
+C:\Users\palki\OneDrive\Documents\GitHub\Veronicas-Epic-Battle\.mono\temp\obj\ExportRelease\VeronicasEpicBattle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\palki\OneDrive\Documents\GitHub\Veronicas-Epic-Battle\.mono\temp\obj\ExportRelease\VeronicasEpicBattle.AssemblyInfoInputs.cache
+C:\Users\palki\OneDrive\Documents\GitHub\Veronicas-Epic-Battle\.mono\temp\obj\ExportRelease\VeronicasEpicBattle.AssemblyInfo.cs
+C:\Users\palki\OneDrive\Documents\GitHub\Veronicas-Epic-Battle\.mono\temp\obj\ExportRelease\VeronicasEpicBattle.csproj.CoreCompileInputs.cache
+C:\Users\palki\OneDrive\Documents\GitHub\Veronicas-Epic-Battle\.mono\temp\obj\ExportRelease\VeronicasEpicBattle.dll
+C:\Users\palki\OneDrive\Documents\GitHub\Veronicas-Epic-Battle\.mono\temp\obj\ExportRelease\VeronicasEpicBattle.pdb
