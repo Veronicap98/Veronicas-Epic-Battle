@@ -27,6 +27,7 @@ public class main : Panel
 		
 		herohplabel.Text = name; monsterhplabel.Text = "Monster HP";
 
+		second.poop = "Hello";
 		
 		intro();
 		
@@ -111,6 +112,11 @@ public class main : Panel
 				break;
 		}
 	}
+
+	private void _on_testbutton_button_down()
+{
+	GetTree().ChangeScene("res://second.tscn");
+}
 
 	private async void intro()
 	{
@@ -221,3 +227,4 @@ public class main : Panel
 		inputwindow.Editable = true; button.Disabled = false;
 	}
 }
+

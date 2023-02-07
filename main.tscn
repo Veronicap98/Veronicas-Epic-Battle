@@ -160,4 +160,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="testbutton" type="Button" parent="."]
+margin_left = 709.0
+margin_top = 498.0
+margin_right = 787.0
+margin_bottom = 552.0
+
 [connection signal="button_down" from="button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="testbutton" to="." method="_on_testbutton_button_down"]

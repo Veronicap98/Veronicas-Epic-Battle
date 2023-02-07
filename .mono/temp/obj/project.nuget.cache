@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "+REZnMnfOTGKZtdgifnJD0UELRJj0y5MrMfo5zyHYHRKr8ezMRwg/wPLI//G4wHLny2PctO18IHKf681xKCw0w==",
+  "dgSpecHash": "wi7ba5+YPxQmrgmo5dAXiKwzXL5FVR8VV1PWPdCWMCOBG8Q3ZzuVu6zaKBW5UpfsNs1aXZzVlvL6HwziBgv//w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\palki\\OneDrive\\Documents\\GitHub\\Veronicas-Epic-Battle\\VeronicasEpicBattle.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/veronica/Documents/GitHub/veronicasepicbattle/Veronicas-Epic-Battle/VeronicasEpicBattle.csproj",
+  "expectedPackageFiles": [
+    "/home/veronica/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.2/microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "/home/veronica/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.2/microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
